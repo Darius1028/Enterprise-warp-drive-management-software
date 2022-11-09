@@ -1,10 +1,10 @@
 # Enterprise’ warp-drive management software
 
-## 
+## Nombre
 Dario Morales
-## Estructura del Proyecto
 
-react-boilerplate 
+## Estructura del Proyecto
+example react-boilerplate 
 
 ### Funcion de calculo de inyectores
 --/components/inyector.js
