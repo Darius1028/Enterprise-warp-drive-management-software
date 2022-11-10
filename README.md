@@ -3,8 +3,11 @@
 ## Estructura del Proyecto
 
 --App.js => # componente base del proyecto 
+
 --components/form.js => # contiene el componente formulario para interactuar con la funcion operationInyectors
+
 --operationInyectors/operationInyectors.js # contiene funcion operationInyectors(injectors, speedPercent)
+
 --operationInyectors/test/operationInyectors.jest.js # contiene test para funcion operationInyectors 
 
 ## Codigo
