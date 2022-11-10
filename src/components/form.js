@@ -75,11 +75,11 @@ function Form() {
         ?
         <div>
           <div>
-            <div>Flujo A: {Math.trunc(result.injectorsFlux.A?.flux)}</div>
-            <div>Flujo B: {Math.trunc(result.injectorsFlux.B?.flux)}</div>
-            <div>Flujo C: {Math.trunc(result.injectorsFlux.C?.flux)}</div>
+            <div>Flujo A: {Math.trunc(result.injectorsFlux.A?.flux)} mg/s</div>
+            <div>Flujo B: {Math.trunc(result.injectorsFlux.B?.flux)} mg/s</div>
+            <div>Flujo C: {Math.trunc(result.injectorsFlux.C?.flux)} mg/s</div>
           </div>
-          <div> Tiempo maximo {Math.trunc(result.maxTime)}</div>
+          <div> Tiempo maximo {Math.trunc(result.maxTime)} minutos</div>
         </div>
         : <div>Empty</div>
         }
