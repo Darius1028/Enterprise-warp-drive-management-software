@@ -4,7 +4,7 @@ import { operationInyectors } from '../operationInyectors/operationInyectors';
 
 function Form() {
 
-  const [result, setResult] = useState({});
+  const [result, setResult] = useState([]);
 
   const [damageA, setDamageA] = useState(0);
   const [damageB, setDamageB] = useState(0);
@@ -13,13 +13,14 @@ function Form() {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    const injectors = {
-      A: { damage: damageA },
-      B: { damage: damageB },
-      C: { damage: damageC },
-    };
+    const injectors = [
+      { damage: damageA },
+      { damage: damageB },
+      { damage: damageC },
+    ];
     const data = operationInyectors(injectors, speedPercent);
     setResult(data);
+    console.log(data);
   };
 
   return (
@@ -71,18 +72,22 @@ function Form() {
         <br />
         <input type="submit" value="Calcular" />
       </form>
-       {Object.keys(result).length !== 0 
+      {result.length !== 0
         ?
         <div>
           <div>
-            <div>Flujo A: {Math.trunc(result.injectorsFlux.A?.flux)} mg/s</div>
-            <div>Flujo B: {Math.trunc(result.injectorsFlux.B?.flux)} mg/s</div>
-            <div>Flujo C: {Math.trunc(result.injectorsFlux.C?.flux)} mg/s</div>
+          { !result.injectorsFlux.hasOwnProperty('error') ?
+              result.injectorsFlux.map((flux, index) => (
+                <div>Flujo {index}: {Math.trunc(flux)} mg/s</div>
+              ))
+              : <div>{result.injectorsFlux.error}</div>
+          }            
+
           </div>
           <div> Tiempo maximo {Math.trunc(result.maxTime)} minutos</div>
         </div>
         : <div>Empty</div>
-        }
+      }
 
 
     </>

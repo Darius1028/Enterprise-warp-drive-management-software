@@ -7,8 +7,8 @@ export const INFINITE = 'Infinite';
 export const initialInjectorState = {
   damage: 0,
 };
-export const initialInjectorsState = {
-  A: { ...initialInjectorState },
-  B: { ...initialInjectorState },
-  C: { ...initialInjectorState },
-};
+export const initialInjectorsState = [
+  { ...initialInjectorState },
+  { ...initialInjectorState },
+  { ...initialInjectorState },
+];
